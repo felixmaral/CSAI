@@ -7,7 +7,7 @@
   
 /* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
 .columna {
-float: left;
+float: right;
 padding: 10px;
 min-height: 500px;
 }
@@ -28,11 +28,11 @@ clear: both;
 }
 
 #c1 {
-    background-color: darkslategrey;
+    background-color: lightsteelblue;
 }
 
 #c2 {
-    background-color: darkslategrey;
+    background-color: lightsteelblue;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
