@@ -6,6 +6,7 @@ h1 {
   font-family: monospace;
   font-weight: bold;
   color: midnightblue;
+  margin: 20px;
 }
 
 h2 {
@@ -47,7 +48,7 @@ min-height: auto;
   padding: 16px;
   margin: auto;
   text-align: start;
-  background-color: whitesmoke;
+  background: linear-gradient(white, rgb(202, 202, 202));
   border-radius: 10px;
 }
 
@@ -84,13 +85,16 @@ clear: both;
 
 #cardlinks {
   text-align: center;
-  background-color: gainsboro;
+  background: linear-gradient(white, rgb(202, 202, 202));
 }
 
 #imgperfil {
   
 }
 
+#title {
+  size: 120%;
+}
 
 /*** BOTÓN SLIDE LEFT ***/
 
