@@ -1,6 +1,35 @@
 /* https://www.w3schools.com/howto/howto_css_two_columns.asp */
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
+
+h1 {
+  font-family: monospace;
+  font-weight: bold;
+  color: midnightblue;
+}
+
+h2 {
+  font-family: monospace;
+  font-weight: bold;
+  color: midnightblue;
+}
+
+p  {
+  font-family: 'Courier New', Courier, monospace;
+  color: midnightblue;}
+
+a:link, a:visited {
+  text-decoration: none;
+  font-family: monospace;
+  }
+
+li  {
+  font-family: 'Courier New', Courier, monospace;
+  color: midnightblue;
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -9,19 +38,28 @@
 .columna {
 float: left;
 padding: 10px;
-min-height: 500px;
-align-content: center;
+min-height: auto;
 }
 
-.izquierda {
-width: 20%;
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin: auto;
+  text-align: start;
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
 
 .centro {
-  width: 15%;
+width: 20%;
 }
 
 .derecha {
+  width: 15%;
+}
+
+.izquierda {
 width: 65%;
 }
 
@@ -33,22 +71,71 @@ clear: both;
 }
 
 #c1 {
-  background-color:#aaa;
+  text-align: start;
 }
 
 #c2 {
-  background-color:#bbb;
+  text-align: start;
 }
 
 #c3 {
-  background-color: grey;
+  text-align: center;
+}
+
+#cardlinks {
+  text-align: center;
+  background-color: gainsboro;
+}
+
+#imgperfil {
+  
+}
+
+
+/*** BOTÓN SLIDE LEFT ***/
+
+.ov-btn-slide-left {
+  background: whitesmoke; /* color de fondo */
+  color: midnightblue; /* color de fuente */
+  border: 2px solid midnightblue; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.ov-btn-slide-left:hover {
+  color: whitesmoke; /* color de fuente hover */
+}
+.ov-btn-slide-left::after {
+  content: "";
+  background: midnightblue; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-left:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
 }
 
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
-  width: 100%;
+  width: 60%;
   height: auto;
 }
 
