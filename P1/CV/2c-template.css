@@ -2,6 +2,9 @@
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
 
+body {
+  background: radial-gradient(white, rgb(202, 202, 202)}
+
 h1 {
   font-family: monospace;
   font-weight: bold;
