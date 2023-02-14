@@ -2,10 +2,6 @@
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
 
-body {
-  background-color: azure;
-}
-
 h1 {
   font-family: monospace;
   font-weight: bold;
