@@ -3,7 +3,8 @@
 /* Así definimos el comportamiento de caja para todos los elementos */
 
 body {
-  background: radial-gradient(white, rgb(202, 202, 202)}
+  background-color: azure;
+}
 
 h1 {
   font-family: monospace;
