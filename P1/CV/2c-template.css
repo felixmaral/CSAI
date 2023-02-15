@@ -2,27 +2,62 @@
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
 
+body {
+  background-color: aliceblue;
+}
+
 h1 {
-  font-family: monospace;
-  font-weight: bold;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 35px;
+  letter-spacing: 0.4px;
+  word-spacing: 2px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
   color: midnightblue;
   margin: 20px;
 }
 
 h2 {
-  font-family: monospace;
-  font-weight: bold;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 25px;
+  letter-spacing: 0.4px;
+  word-spacing: 2px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
   color: midnightblue;
   text-align: center;
 }
 
 p  {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  word-spacing: 2px;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
   color: midnightblue;}
 
 a:link, a:visited {
   text-decoration: none;
-  font-family: monospace;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  word-spacing: 2px;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: midnightblue;
   }
 
 li  {
@@ -49,9 +84,9 @@ min-height: auto;
   padding: 16px;
   margin: auto;
   text-align: start;
-  background: linear-gradient(white, rgb(202, 202, 202));
+  background: linear-gradient(white, aliceblue);
   border-radius: 10px;
-  border: 1px solid; color: midnightblue;
+  border: 1px solid; color: aliceblue;
 }
 
 .centro {
@@ -101,7 +136,6 @@ clear: both;
 
 #cardlinks {
   text-align: center;
-  background: linear-gradient(white, rgb(202, 202, 202));
 }
 
 #title {
@@ -117,7 +151,7 @@ clear: both;
   width: 120px;
   height: auto;
   border-radius: 20px;
-  border: 1px solid; color: midnightblue;
+  border: 1px solid; color: aliceblue;
 }
 
 #t2 {
