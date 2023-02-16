@@ -147,6 +147,7 @@ clear: both;
 #foto {
   text-align: center;
   margin-top: 10px;
+  border-radius: 20px;
 }
 
 #foto1 {
@@ -158,7 +159,7 @@ clear: both;
 
 #fotoAbout {
   height: auto;
-  width: 300px;
+  width: 200px;
   border-radius: 20px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   margin: 30px;
