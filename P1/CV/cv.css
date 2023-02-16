@@ -174,7 +174,7 @@ clear: both;
   color: midnightblue; /* color de fuente */
   border: 2px solid midnightblue; /* tamaño y color de borde */
   padding: 16px 20px;
-  border-radius: 3px; /* redondear bordes */
+  border-radius: 10px; /* redondear bordes */
   position: relative;
   z-index: 1;
   overflow: hidden;
