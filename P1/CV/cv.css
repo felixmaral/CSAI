@@ -3,7 +3,7 @@
 /* Así definimos el comportamiento de caja para todos los elementos */
 
 body {
-  background-color: aliceblue;
+  background-color: rgb(210, 233, 253);
 }
 
 h1 {
@@ -102,7 +102,6 @@ min-height: auto;
   text-align: start;
   background: linear-gradient(white, aliceblue);
   border-radius: 10px;
-  border: 1px solid; color: aliceblue;
 }
 
 .centro {
@@ -190,7 +189,6 @@ clear: both;
 .ov-btn-slide-left {
   background: white; /* color de fondo */
   color: midnightblue; /* color de fuente */
-  border: 2px solid midnightblue; /* tamaño y color de borde */
   padding: 16px 20px;
   border-radius: 10px; /* redondear bordes */
   position: relative;
@@ -198,6 +196,7 @@ clear: both;
   overflow: hidden;
   display: inline-block;
   min-width: 130px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 .ov-btn-slide-left:hover {
   color: white; /* color de fuente hover */
@@ -230,7 +229,6 @@ clear: both;
 .ov-btn-slide-right {
   background: white; /* color de fondo */
   color: midnightblue; /* color de fuente */
-  border: 2px solid midnightblue; /* tamaño y color de borde */
   padding: 16px 20px;
   border-radius: 10px; /* redondear bordes */
   position: relative;
@@ -239,6 +237,7 @@ clear: both;
   display: inline-block;
   min-width: 130px;
   text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 .ov-btn-slide-right:hover {
   color: white; /* color de fuente hover */
