@@ -122,7 +122,9 @@ display: table;
 clear: both;
 }
 
-
+#binit {
+  padding: 10px;
+}
 
 #c1 {
   text-align: start;
@@ -201,6 +203,47 @@ clear: both;
   transition: all 0.35s;
 }
 .ov-btn-slide-left:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+/*** BOTÓN SLIDE RIGHT ***/
+
+.ov-btn-slide-right {
+  background: white; /* color de fondo */
+  color: midnightblue; /* color de fuente */
+  border: 2px solid midnightblue; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 10px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  min-width: 130px;
+  text-align: center;
+}
+.ov-btn-slide-right:hover {
+  color: white; /* color de fuente hover */
+}
+.ov-btn-slide-right::after {
+  content: "";
+  background: midnightblue; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-right:hover::after {
   left: 0;
   right: 0;
   top: 0;
