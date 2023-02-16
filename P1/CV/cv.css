@@ -60,6 +60,10 @@ a:link, a:visited {
   color: midnightblue;
   }
 
+a {
+  margin-top: 15px;
+}
+
 li  {
   font-family: 'Courier New', Courier, monospace;
   color: midnightblue;
