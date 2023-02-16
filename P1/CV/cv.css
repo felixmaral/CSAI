@@ -179,6 +179,7 @@ clear: both;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
+  min-width: 130px;
 }
 .ov-btn-slide-left:hover {
   color: white; /* color de fuente hover */
