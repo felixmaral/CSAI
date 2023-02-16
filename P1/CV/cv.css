@@ -15,7 +15,6 @@ h1 {
   text-decoration: none;
   font-style: normal;
   font-variant: small-caps;
-  text-transform: capitalize;
   color: midnightblue;
   margin: 20px;
 }
@@ -104,16 +103,12 @@ min-height: auto;
   border-radius: 10px;
 }
 
-.centro {
-width: 44%;
+.main {
+width: 88%;
 }
 
 .derecha {
   width: 12%;
-}
-
-.izquierda {
-width: 44%;
 }
 
 .about1 {
@@ -157,6 +152,7 @@ clear: both;
 
 #title {
   size: 120%;
+  text-align: center;
 }
 
 #foto {
