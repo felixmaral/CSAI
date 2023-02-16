@@ -65,8 +65,6 @@ li  {
   color: midnightblue;
 }
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -78,7 +76,7 @@ padding: 10px;
 min-height: auto;
 }
 
-/* Style the counter cards */
+/* Crear interfaz de cartas */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -151,7 +149,7 @@ clear: both;
   width: 120px;
   height: auto;
   border-radius: 20px;
-  border: 1px solid; color: aliceblue;
+  border: 1px solid;
 }
 
 #t2 {
@@ -161,7 +159,7 @@ clear: both;
 /*** BOTÓN SLIDE LEFT ***/
 
 .ov-btn-slide-left {
-  background: whitesmoke; /* color de fondo */
+  background: white; /* color de fondo */
   color: midnightblue; /* color de fuente */
   border: 2px solid midnightblue; /* tamaño y color de borde */
   padding: 16px 20px;
@@ -172,7 +170,7 @@ clear: both;
   display: inline-block;
 }
 .ov-btn-slide-left:hover {
-  color: whitesmoke; /* color de fuente hover */
+  color: white; /* color de fuente hover */
 }
 .ov-btn-slide-left::after {
   content: "";
