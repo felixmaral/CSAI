@@ -190,8 +190,9 @@ clear: both;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
-  min-width: 130px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
 }
 .ov-btn-slide-left:hover {
   color: white; /* color de fuente hover */
@@ -230,9 +231,10 @@ clear: both;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
-  min-width: 130px;
   text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
 }
 .ov-btn-slide-right:hover {
   color: white; /* color de fuente hover */
