@@ -153,26 +153,18 @@ clear: both;
   text-align: center;
 }
 
-#cardlinks {
+.cardlinks {
   text-align: center;
 }
 
 #title {
-  size: 120%;
+  resize: 120%;
   text-align: start;
 }
 
-#foto {
+.foto {
   text-align: center;
   margin-top: 10px;
-  border-radius: 20px;
-}
-
-#foto1 {
-  width: 120px;
-  height: auto;
-  border-radius: 20px;
-  border: 1px solid;
 }
 
 #t2 {
@@ -269,8 +261,10 @@ clear: both;
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
-  width: 60%;
+  width: 30%;
   height: auto;
+  border-radius: 20px;
+  border: 1px solid midnightblue;
 }
 
 .iresponsive {
