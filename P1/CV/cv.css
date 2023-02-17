@@ -193,6 +193,8 @@ clear: both;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   max-width: 100%;
   height: auto;
+  padding: auto;
+  text-align: center;
 }
 .ov-btn-slide-left:hover {
   color: white; /* color de fuente hover */
@@ -235,6 +237,7 @@ clear: both;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   max-width: 100%;
   height: auto;
+  padding: auto;
 }
 .ov-btn-slide-right:hover {
   color: white; /* color de fuente hover */
@@ -286,14 +289,6 @@ img {
 
   .iresponsive {
       width: 100%;
-  }
-
-  .ov-btn-slide-right {
-    padding: 15px 5px;
-  }
-
-  .ov-btn-slide-left {
-    padding: 15px 2px;
   }
 }
 
