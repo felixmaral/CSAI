@@ -7,8 +7,8 @@ function updateDisplay(value) {
     const display = document.getElementById('display');
   
     if (value === '/' || value === '*' || value === '-' || value === '+') {
-      operator = value;
       operand1 = parseFloat(display.value);
+      operator = value;
       display.value = '';
     } else if (value === '=') {
       operand2 = parseFloat(display.value);
@@ -20,6 +20,7 @@ function updateDisplay(value) {
       display.value += value;
     }
   }
+  
   
 
 function clearDisplay() {
