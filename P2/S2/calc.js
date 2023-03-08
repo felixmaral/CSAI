@@ -4,22 +4,23 @@ let operator = '';
 let result = '';
 
 function updateDisplay(value) {
-  const display = document.getElementById('display');
-
-  if (value === '/' || value === '*' || value === '-' || value === '+') {
-    operator = value;
-    operand1 = display.value;
-    display.value = '';
-  } else if (value === '=') {
-    operand2 = display.value;
-    result = calculateResult(operator, operand1, operand2);
-    display.value = result;
-  } else if (value === 'C') {
-    clearDisplay();
-  } else {
-    display.value += value;
+    const display = document.getElementById('display');
+  
+    if (value === '/' || value === '*' || value === '-' || value === '+') {
+      operator = value;
+      operand1 = parseFloat(display.value);
+      display.value = '';
+    } else if (value === '=') {
+      operand2 = parseFloat(display.value);
+      result = calculateResult(operator, operand1, operand2);
+      display.value = result;
+    } else if (value === 'C') {
+      clearDisplay();
+    } else {
+      display.value += value;
+    }
   }
-}
+  
 
 function clearDisplay() {
   const display = document.getElementById('display');
