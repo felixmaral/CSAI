@@ -8,4 +8,23 @@ suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
-console.log(display)
+boton1.onclick = () => {
+    display.innerHTML += boton1.value;
+  }
+
+boton2.onclick = () => {
+    display.innerHTML += boton2.value;
+}
+
+suma.onclick = () => {
+    display.innerHTML += suma.value;
+}
+
+igual.onclick = () => {
+    display.innerHTML = eval(display.innerHTML);
+}
+
+clear.onclick = () => {
+    display.innerHTML = "0";
+}
+
