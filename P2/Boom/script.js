@@ -103,7 +103,8 @@
         K1: 0,
         K2: 1,
         K3: 2,
-        K4: 3
+        K4: 3,
+        WIN: 4
     }
 
 
@@ -111,46 +112,65 @@
 
     const gameElementes = {
         d1: document.getElementById("d1"),
-        d2: document.getElementById("d1"),
-        d3: document.getElementById("d1"),
-        d4: document.getElementById("d1"),
+        d2: document.getElementById("d2"),
+        d3: document.getElementById("d3"),
+        d4: document.getElementById("d4"),
+        win: document.getElementById("win"),
         keys: document.getElementsByClassName("key")
     }
-
-
 
 // Funcionalidad del juego
 
 function compare(keyCompare) {
-    if (estado == ESTADO.K1) {
-        if (keyCompare == secretKey[0]) {
-            gameElementes.d1.innerHTML = skey;
-            estado = ESTADO.K2
-        } else {
-            gameElementes.d1.innerHTML = "X"
-        }
-    } else if (estado == ESTADO.K2) {
-        if (keyCompare == skey) {
-            gameElementes.d1.innerHTML = skey;
-            estado = ESTADO.K2
-        } else {
-            gameElementes.d2.innerHTML = "X"
-        }
-    } else if (estado == ESTADO.K3) {
-        if (keyCompare == skey) {
-            gameElementes.d1.innerHTML = skey;
-            estado = ESTADO.K2
-        } else {
-            gameElementes.d3.innerHTML = "X"
-        } 
-    } else if (estado == ESTADO.K3) {
-        if (keyCompare == skey) {
-            gameElementes.d1.innerHTML = skey;
-            estado = ESTADO.K2
-        } else {
-            gameElementes.d4.innerHTML = "X"
-        } 
+
+    if (keyCompare == secretkey[0]) {
+        gameElementes.d1.innerHTML = secretkey[0];
+        estado = ESTADO.K2;
+
+    } else {
+        gameElementes.d1.innerHTML = "x";
     }
+}
+
+function compare2(keyCompare) {
+
+        if (keyCompare == secretkey[1]) {
+            gameElementes.d2.innerHTML = secretkey[1];
+            estado = ESTADO.K3;
+            console.log("Adivinaste el número 2");
+
+        } else {
+            gameElementes.d2.innerHTML = "x";
+        }
+    } 
+
+function compare3(keyCompare) {
+
+        if (keyCompare == secretkey[2]) {
+            gameElementes.d3.innerHTML = secretkey[2];
+            estado = ESTADO.K4;
+            console.log("Adivinaste el número 3");
+
+        } else {
+            gameElementes.d3.innerHTML = "x";
+        }
+    }
+
+function compare4(keyCompare) {
+
+        if (keyCompare == secretkey[3]) {
+            gameElementes.d4.innerHTML = secretkey[3];
+            estado = ESTADO.WIN;
+
+            return win;
+        } else {
+            gameElementes.d4.innerHTML = "x";
+        } 
+    } 
+
+function winGame() {
+    gameElementes.win.innerHTML = "GANASTE!"
+    timer.stop()
 }
 
 // MAIN
@@ -172,6 +192,7 @@ function compare(keyCompare) {
     cronoElements.boton_reset.onclick = () => {
         timer.stop();
         timer.reset();
+        clicked = false;
         gameElementes.d1.innerHTML = "*"
         gameElementes.d2.innerHTML = "*"
         gameElementes.d3.innerHTML = "*"
@@ -182,8 +203,7 @@ function compare(keyCompare) {
         getSecretKey();
         estado = ESTADO.K1;
         console.log("estado 0")
-        skey = SKEY.K1
-        console.log("El numero secreto para el estado 0 es: " + skey)
+        console.log("El numero secreto para el estado 0 es: " + secretkey[0])
     }
 
     // Inicio del juego
@@ -192,7 +212,7 @@ function compare(keyCompare) {
 
     console.log("estado 0");
 
-    console.log("El numero secreto para el estado 0 es: " )
+    console.log("El numero secreto para el estado 0 es: " + secretkey[0] )
 
     let clicked = false;
     function firstClick(event) {
@@ -222,21 +242,192 @@ function compare(keyCompare) {
     }
 
     gameElementes.keys[9].onclick = () => {
-        keyCompare = keyValue("k0");
-        compare(keyCompare);
+        if (estado == ESTADO.K1) {
+            keyCompare = keyValue("k0");
+            compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k0");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k0");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k0")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
     }
 
-        
-
+    gameElementes.keys[0].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k1");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k1");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k1");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4) {
+            keyCompare = keyValue("k1")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
     
+    gameElementes.keys[1].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k2");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k2");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k2");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k2")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
+    gameElementes.keys[2].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k3");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k3");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k3");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k3")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
+    gameElementes.keys[3].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k4");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k4");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k4");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k4")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
+    gameElementes.keys[4].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k5");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k5");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k5");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k5")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
+    gameElementes.keys[5].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k6");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k6");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k6");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k6")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
+    gameElementes.keys[6].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k7");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k7");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k7");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k7")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
-  
+    gameElementes.keys[7].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k8");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k8");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k8");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4) {
+                keyCompare = keyValue("k8")
+                compare4(keyCompare)
+            } else {
+                console.log("ganaste!!!")
+                winGame()
+            }
+        }
 
+    gameElementes.keys[8].onclick = () => {
+        if (estado == ESTADO.K1) {
+        keyCompare = keyValue("k9");
+        compare(keyCompare);
+        } else if (estado == ESTADO.K2) {
+            keyCompare = keyValue("k9");
+            compare2(keyCompare)
+        } else if (estado == ESTADO.K3) {
+            keyCompare = keyValue("k9");
+            compare3(keyCompare);
+        } else if (estado == ESTADO.K4){
+            keyCompare = keyValue("k9")
+            compare4(keyCompare)
+        } else {
+            console.log("ganaste!!!")
+            winGame()
+        }
+    }
 
-
-  
