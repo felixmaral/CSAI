@@ -106,6 +106,13 @@
         K4: 3
     }
 
+    let SKEY = {
+        K1: secretkey[0],
+        K2: secretkey[1],
+        K3: secretkey[2],
+        K4: secretkey[3]
+    }
+
 // Extrayendo los demás botones del juego
 
     const gameElementes = {
@@ -118,12 +125,14 @@
 
 // Funcionalidad del juego
 
-
-
-
-
-
-
+function compare(keyCompare) {
+    if (keyCompare == skey) {
+        gameElementes.d1.innerHTML = skey;
+        estado = ESTADO.K2
+    } else {
+        gameElementes.d1.innerHTML = "X"
+    }
+}
 
 // MAIN
 
@@ -140,12 +149,24 @@
         timer.stop();
         console.log("Parando Crono")
     }
+
     cronoElements.boton_reset.onclick = () => {
         timer.stop();
         timer.reset();
         secretkey = [];
+        console.log("")
+        console.log("Reiniciando el juego")
         getSecretKey();
-        console.log("Reseteando crono")
+        let SKEY = {
+            K1: secretkey[0],
+            K2: secretkey[1],
+            K3: secretkey[2],
+            K4: secretkey[3]
+        }
+        estado = ESTADO.K1;
+        console.log("estado 0")
+        skey = SKEY.K1
+        console.log("El numero secreto para el estado 0 es: " + skey)
     }
 
     // Inicio del juego
@@ -153,7 +174,38 @@
     let estado = ESTADO.K1;
 
     if (estado == 0) {
-        console.log("estado 1");
+
+        console.log("estado 0");
+
+        skey = SKEY.K1
+        console.log("El numero secreto para el estado 0 es: " + skey)
+
+        let clicked = false;
+        function firstClick(event) {
+            if (!clicked) {
+                timer.start();
+                console.log("Iniciando Cronometro por ejecutar la primera interacción del juego");
+                clicked = true;
+            }
+        }
+
+        // Iniciar crono
+
+        gameElementes.keys[0].addEventListener('click', firstClick);
+        gameElementes.keys[1].addEventListener('click', firstClick);
+        gameElementes.keys[2].addEventListener('click', firstClick);
+        gameElementes.keys[3].addEventListener('click', firstClick);
+        gameElementes.keys[4].addEventListener('click', firstClick);
+        gameElementes.keys[5].addEventListener('click', firstClick);
+        gameElementes.keys[6].addEventListener('click', firstClick);
+        gameElementes.keys[7].addEventListener('click', firstClick);
+        gameElementes.keys[8].addEventListener('click', firstClick);
+        gameElementes.keys[9].addEventListener('click', firstClick);
+
+        
+
+        
+
     }
 
 
