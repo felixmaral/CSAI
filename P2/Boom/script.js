@@ -113,10 +113,12 @@
         d2: document.getElementById("d1"),
         d3: document.getElementById("d1"),
         d4: document.getElementById("d1"),
-        boton_start: document.getElementById("start-btn"),
-        boton_stop: document.getElementById("stop-btn"),
-        boton_reset: document.getElementById("reset-btn")
+        keys: document.getElementsByClassName("key")
     }
+
+// Funcionalidad del juego
+
+
 
 
 
@@ -139,11 +141,22 @@
         console.log("Parando Crono")
     }
     cronoElements.boton_reset.onclick = () => {
+        timer.stop();
         timer.reset();
         secretkey = [];
         getSecretKey();
         console.log("Reseteando crono")
     }
+
+    // Inicio del juego
+
+    let estado = ESTADO.K1;
+
+    if (estado == 0) {
+        console.log("estado 1");
+    }
+
+
 
 
 
