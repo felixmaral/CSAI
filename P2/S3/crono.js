@@ -1,4 +1,12 @@
 //-- Clase cronómetro
+
+const cronoButtons = {
+    display: document.getElementById("displayCrono"),
+    boton_start: document.getElementById("boton_inc"),
+    boton_stop: document.getElementById("boton_dec"),
+    boton_reset: document.getElementById("boton_dec")
+  }
+
 class Crono {
 
     //-- Constructor. Hay que indicar el 
@@ -59,6 +67,6 @@ class Crono {
         this.seg = 0;
         this.min = 0;
 
-        this.display.innerHTML = "0:0:0";
+        this.display.innerHTML = "00:00:00";
     }
 }

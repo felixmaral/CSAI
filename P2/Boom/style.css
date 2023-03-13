@@ -1,2 +1,87 @@
+.container {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+    display: grid;
+    grid-gap: 1rem;
+}
 
+#timer {
+	font-size: 5em;
+	margin-bottom: 1em;
+}
+
+#secret-key {
+	font-size: 3em;
+	margin: 1em 0;
+}
+
+#secret-key span {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border: 2px solid black;
+	border-radius: 50%;
+	margin-right: 1em;
+}
+
+.keypad {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1em;
+}
+
+.key-row {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.5em;
+}
+
+.key {
+	width: 4em;
+	height: 4em;
+	font-size: 2em;
+	margin-right: 0.5em;
+	border: none;
+	background-color: #f0f0f0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.clear {
+	background-color: #ff6666;
+	color: white;
+}
+
+.enter {
+	background-color: #66ff66;
+	color: white;
+}
+
+.controls {
+	margin-top: 2em;
+}
+
+#start-btn, #stop-btn, #reset-btn {
+	font-size: 1.5em;
+	margin-right: 1em;
+	padding: 0.5em 1em;
+	border: none;
+	border-radius: 3px;
+}
+
+html {
+    font-size: 10px;
+  }
+  
+body {
+    font-size: 1rem;
+    padding: 2rem;
+  }
+
+@media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
   
