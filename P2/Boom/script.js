@@ -161,8 +161,8 @@ function compare4(keyCompare) {
         if (keyCompare == secretkey[3]) {
             gameElementes.d4.innerHTML = secretkey[3];
             estado = ESTADO.WIN;
-
-            return win;
+            console.log("ganaste!!!")
+            winGame()
         } else {
             gameElementes.d4.innerHTML = "x";
         } 
@@ -254,10 +254,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k0")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[0].onclick = () => {
@@ -273,10 +270,7 @@ function winGame() {
         } else if (estado == ESTADO.K4) {
             keyCompare = keyValue("k1")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
     
     gameElementes.keys[1].onclick = () => {
@@ -292,10 +286,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k2")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[2].onclick = () => {
@@ -311,10 +302,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k3")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[3].onclick = () => {
@@ -330,10 +318,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k4")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[4].onclick = () => {
@@ -349,10 +334,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k5")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[5].onclick = () => {
@@ -368,10 +350,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k6")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[6].onclick = () => {
@@ -387,10 +366,7 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k7")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
     gameElementes.keys[7].onclick = () => {
@@ -406,11 +382,8 @@ function winGame() {
         } else if (estado == ESTADO.K4) {
                 keyCompare = keyValue("k8")
                 compare4(keyCompare)
-            } else {
-                console.log("ganaste!!!")
-                winGame()
-            }
-        }
+        } 
+    }
 
     gameElementes.keys[8].onclick = () => {
         if (estado == ESTADO.K1) {
@@ -425,9 +398,6 @@ function winGame() {
         } else if (estado == ESTADO.K4){
             keyCompare = keyValue("k9")
             compare4(keyCompare)
-        } else {
-            console.log("ganaste!!!")
-            winGame()
-        }
+        } 
     }
 
