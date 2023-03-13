@@ -106,12 +106,6 @@
         K4: 3
     }
 
-    let SKEY = {
-        K1: secretkey[0],
-        K2: secretkey[1],
-        K3: secretkey[2],
-        K4: secretkey[3]
-    }
 
 // Extrayendo los demás botones del juego
 
@@ -123,14 +117,40 @@
         keys: document.getElementsByClassName("key")
     }
 
+
+
 // Funcionalidad del juego
 
 function compare(keyCompare) {
-    if (keyCompare == skey) {
-        gameElementes.d1.innerHTML = skey;
-        estado = ESTADO.K2
-    } else {
-        gameElementes.d1.innerHTML = "X"
+    if (estado == ESTADO.K1) {
+        skey = SKEY.K1;
+        if (keyCompare == skey) {
+            gameElementes.d1.innerHTML = skey;
+            estado = ESTADO.K2
+        } else {
+            gameElementes.d1.innerHTML = "X"
+        }
+    } else if (estado == ESTADO.K2) {
+        if (keyCompare == skey) {
+            gameElementes.d1.innerHTML = skey;
+            estado = ESTADO.K2
+        } else {
+            gameElementes.d2.innerHTML = "X"
+        }
+    } else if (estado == ESTADO.K3) {
+        if (keyCompare == skey) {
+            gameElementes.d1.innerHTML = skey;
+            estado = ESTADO.K2
+        } else {
+            gameElementes.d3.innerHTML = "X"
+        } 
+    } else if (estado == ESTADO.K3) {
+        if (keyCompare == skey) {
+            gameElementes.d1.innerHTML = skey;
+            estado = ESTADO.K2
+        } else {
+            gameElementes.d4.innerHTML = "X"
+        } 
     }
 }
 
@@ -153,6 +173,10 @@ function compare(keyCompare) {
     cronoElements.boton_reset.onclick = () => {
         timer.stop();
         timer.reset();
+        gameElementes.d1.innerHTML = "*"
+        gameElementes.d2.innerHTML = "*"
+        gameElementes.d3.innerHTML = "*"
+        gameElementes.d4.innerHTML = "*"
         secretkey = [];
         console.log("")
         console.log("Reiniciando el juego")
@@ -173,40 +197,54 @@ function compare(keyCompare) {
 
     let estado = ESTADO.K1;
 
-    if (estado == 0) {
-
-        console.log("estado 0");
-
-        skey = SKEY.K1
-        console.log("El numero secreto para el estado 0 es: " + skey)
-
-        let clicked = false;
-        function firstClick(event) {
-            if (!clicked) {
-                timer.start();
-                console.log("Iniciando Cronometro por ejecutar la primera interacción del juego");
-                clicked = true;
-            }
-        }
-
-        // Iniciar crono
-
-        gameElementes.keys[0].addEventListener('click', firstClick);
-        gameElementes.keys[1].addEventListener('click', firstClick);
-        gameElementes.keys[2].addEventListener('click', firstClick);
-        gameElementes.keys[3].addEventListener('click', firstClick);
-        gameElementes.keys[4].addEventListener('click', firstClick);
-        gameElementes.keys[5].addEventListener('click', firstClick);
-        gameElementes.keys[6].addEventListener('click', firstClick);
-        gameElementes.keys[7].addEventListener('click', firstClick);
-        gameElementes.keys[8].addEventListener('click', firstClick);
-        gameElementes.keys[9].addEventListener('click', firstClick);
-
-        
-
-        
-
+    let SKEY = {
+        K1: secretkey[0],
+        K2: secretkey[1],
+        K3: secretkey[2],
+        K4: secretkey[3]
     }
+
+    skey = SKEY.K1;
+
+    console.log("estado 0");
+
+    console.log("El numero secreto para el estado 0 es: " )
+
+    let clicked = false;
+    function firstClick(event) {
+        if (!clicked) {
+            timer.start();
+            console.log("Iniciando Cronometro por ejecutar la primera interacción del juego");
+            clicked = true;
+        }
+    }
+
+    // Iniciar crono
+
+    gameElementes.keys[0].addEventListener('click', firstClick);
+    gameElementes.keys[1].addEventListener('click', firstClick);
+    gameElementes.keys[2].addEventListener('click', firstClick);
+    gameElementes.keys[3].addEventListener('click', firstClick);
+    gameElementes.keys[4].addEventListener('click', firstClick);
+    gameElementes.keys[5].addEventListener('click', firstClick);
+    gameElementes.keys[6].addEventListener('click', firstClick);
+    gameElementes.keys[7].addEventListener('click', firstClick);
+    gameElementes.keys[8].addEventListener('click', firstClick);
+    gameElementes.keys[9].addEventListener('click', firstClick);
+
+    function keyValue(id_variable) {
+        var value = document.getElementById(id_variable).value;
+        return value;
+    }
+
+    gameElementes.keys[9].onclick = () => {
+        keyCompare = keyValue("k0");
+        compare(keyCompare);
+    }
+
+        
+
+    
 
 
 
