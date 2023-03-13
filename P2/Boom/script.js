@@ -123,8 +123,7 @@
 
 function compare(keyCompare) {
     if (estado == ESTADO.K1) {
-        skey = SKEY.K1;
-        if (keyCompare == skey) {
+        if (keyCompare == secretKey[0]) {
             gameElementes.d1.innerHTML = skey;
             estado = ESTADO.K2
         } else {
@@ -181,12 +180,6 @@ function compare(keyCompare) {
         console.log("")
         console.log("Reiniciando el juego")
         getSecretKey();
-        let SKEY = {
-            K1: secretkey[0],
-            K2: secretkey[1],
-            K3: secretkey[2],
-            K4: secretkey[3]
-        }
         estado = ESTADO.K1;
         console.log("estado 0")
         skey = SKEY.K1
@@ -196,15 +189,6 @@ function compare(keyCompare) {
     // Inicio del juego
 
     let estado = ESTADO.K1;
-
-    let SKEY = {
-        K1: secretkey[0],
-        K2: secretkey[1],
-        K3: secretkey[2],
-        K4: secretkey[3]
-    }
-
-    skey = SKEY.K1;
 
     console.log("estado 0");
 
