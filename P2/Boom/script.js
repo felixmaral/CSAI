@@ -69,9 +69,63 @@
             this.seg = 0;
             this.min = 0;
 
-            this.display.innerHTML = "00:00:00";
+            this.display.innerHTML = "0:0:0";
         }
     }
+
+// Generar clave secreta
+
+    //-- Array que almacena números secretos
+    let secretkey = [];
+
+    //-- Generar números aleatorios con un valor máximo
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    //-- Generamos números secretos y los almacenamos en un array
+    function getSecretKey() {
+        for (let i = 0; i < 4; i++) {
+            let rnum = getRandomInt(9);
+            secretkey.push(rnum.toString());
+        }
+        //-- Mostramos el contenido del array de números secretos en la consola
+        for (let j = 0; j < secretkey.length; j++) {
+            console.log( j + ' Secret Key ' + secretkey[j]);
+        }
+    }
+
+    getSecretKey();
+
+// Estados del juego
+
+    const ESTADO = {
+        K1: 0,
+        K2: 1,
+        K3: 2,
+        K4: 3
+    }
+
+// Extrayendo los demás botones del juego
+
+    const gameElementes = {
+        d1: document.getElementById("d1"),
+        d2: document.getElementById("d1"),
+        d3: document.getElementById("d1"),
+        d4: document.getElementById("d1"),
+        boton_start: document.getElementById("start-btn"),
+        boton_stop: document.getElementById("stop-btn"),
+        boton_reset: document.getElementById("reset-btn")
+    }
+
+
+
+
+
+
+// MAIN
+
+    // Creando cronometro y asignando las funciones a los botones HTML
 
     timer = new Crono(cronoElements.display);
 
@@ -86,11 +140,11 @@
     }
     cronoElements.boton_reset.onclick = () => {
         timer.reset();
+        secretkey = [];
+        getSecretKey();
         console.log("Reseteando crono")
     }
 
-
-// 
 
 
 
