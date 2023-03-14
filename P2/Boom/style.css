@@ -10,13 +10,14 @@
     grid-gap: 1rem;
 }
 
-#timer {
-	font-size: medium;
+#displayCrono {
+	font-size: 20px;
 	margin-bottom: 1em;
 }
 
 #win {
-	font-size: medium;
+	font-size: 30px;
+	color: #0e62e0;
 }
 
 #secret-key {
@@ -56,6 +57,7 @@
 	background-color: #f0f0f0;
 	border-radius: 5px;
 	cursor: pointer;
+	color: #0e62e0;
 }
 
 .clear {
