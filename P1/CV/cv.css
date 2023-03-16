@@ -3,7 +3,7 @@
 /* Así definimos el comportamiento de caja para todos los elementos */
 
 body {
-  background-color: aliceblue;
+  background-color: rgb(210, 233, 253);
 }
 
 h1 {
@@ -15,12 +15,25 @@ h1 {
   text-decoration: none;
   font-style: normal;
   font-variant: small-caps;
-  text-transform: capitalize;
   color: midnightblue;
   margin: 20px;
 }
 
 h2 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 25px;
+  letter-spacing: 0.4px;
+  word-spacing: 2px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: midnightblue;
+  text-align: center;
+}
+
+h3 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 25px;
   letter-spacing: 0.4px;
@@ -60,12 +73,14 @@ a:link, a:visited {
   color: midnightblue;
   }
 
-li  {
-  font-family: 'Courier New', Courier, monospace;
-  color: midnightblue;
+a {
+  margin-top: 15px;
 }
 
-
+li  {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: midnightblue;
+}
 
 * {
   box-sizing: border-box;
@@ -78,7 +93,7 @@ padding: 10px;
 min-height: auto;
 }
 
-/* Style the counter cards */
+/* Crear interfaz de cartas */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -86,27 +101,28 @@ min-height: auto;
   text-align: start;
   background: linear-gradient(white, aliceblue);
   border-radius: 10px;
-  border: 1px solid; color: aliceblue;
 }
 
-.centro {
-width: 20%;
+.img-responsive {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main {
+width: 80%;
 }
 
 .derecha {
-  width: 15%;
-}
-
-.izquierda {
-width: 65%;
+  width: 20%;
 }
 
 .about1 {
-  width: 50%;
+  width: 25%;
 }
 
 .about2 {
-  width: 50%;
+  width: 75%;
 }
 
 .Enum {
@@ -120,7 +136,9 @@ display: table;
 clear: both;
 }
 
-
+#binit {
+  padding: 10px;
+}
 
 #c1 {
   text-align: start;
@@ -134,24 +152,17 @@ clear: both;
   text-align: center;
 }
 
-#cardlinks {
+.cardlinks {
   text-align: center;
 }
 
 #title {
-  size: 120%;
+  text-align: start;
 }
 
-#foto {
+.foto {
   text-align: center;
   margin-top: 10px;
-}
-
-#foto1 {
-  width: 120px;
-  height: auto;
-  border-radius: 20px;
-  border: 1px solid; color: aliceblue;
 }
 
 #t2 {
@@ -161,18 +172,21 @@ clear: both;
 /*** BOTÓN SLIDE LEFT ***/
 
 .ov-btn-slide-left {
-  background: whitesmoke; /* color de fondo */
+  background: white; /* color de fondo */
   color: midnightblue; /* color de fuente */
-  border: 2px solid midnightblue; /* tamaño y color de borde */
   padding: 16px 20px;
-  border-radius: 3px; /* redondear bordes */
+  border-radius: 10px; /* redondear bordes */
   position: relative;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  text-align: center;
 }
 .ov-btn-slide-left:hover {
-  color: whitesmoke; /* color de fuente hover */
+  color: white; /* color de fuente hover */
 }
 .ov-btn-slide-left::after {
   content: "";
@@ -197,18 +211,62 @@ clear: both;
   transition: all 0.35s;
 }
 
+/*** BOTÓN SLIDE RIGHT ***/
+
+.ov-btn-slide-right {
+  background: white; /* color de fondo */
+  color: midnightblue; /* color de fuente */
+  padding: 16px 20px;
+  border-radius: 10px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+.ov-btn-slide-right:hover {
+  color: white; /* color de fuente hover */
+}
+.ov-btn-slide-right::after {
+  content: "";
+  background: midnightblue; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-right:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
 /* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
 /* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
 
 img {
-  width: 60%;
+  width: 30%;
   height: auto;
+  border-radius: 20px;
+  border: 1px solid midnightblue;
 }
 
 .iresponsive {
-  padding: 0 6px;
+  padding: 0 10px;
   float: left;
-  width: 50%;
+  width: 70%;
 }
 
 /* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
