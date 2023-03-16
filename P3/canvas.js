@@ -3,8 +3,8 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 400;
-canvas.height = 400;
+canvas.width = 800;
+canvas.height = 800;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -20,7 +20,7 @@ ctx.beginPath();
   ctx.fillStyle = 'blue';
 
   //-- Cambiar el tamaño de la línea del trazo
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 3;
 
   //-- Mostrar el relleno
   ctx.fill();
@@ -66,3 +66,23 @@ ctx.beginPath();
     ctx.fill()
     
 ctx.closePath()
+
+//-- Texto solido
+ctx.font = "25px Arial";
+ctx.fillStyle = 'blue'
+ctx.fillText("Texto sólido", 10, 340);
+
+//-- Texto trazo
+ctx.strokeStyle = 'blue';
+ctx.font = "50px Arial";
+ctx.strokeText("Texto trazo", 10, 380);
+
+//-- Leer la imagen del documento html
+//-- Esta deshabilitada
+var logo = document.getElementById("urjc");
+
+logo.onload = ()=> {
+  //-- Insertar la imagen en el canvas, una vez que
+  //-- ya esté cargada!
+  ctx.drawImage(logo, 300,300);
+};
