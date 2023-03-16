@@ -3,8 +3,14 @@
 }
 
 .clave {
-	padding: 0.6em;
 	margin: 0.15em;
+	display: flex;
+	padding: 1em;
+	text-align: center;
+	font-size: 1.53em;
+	background-color: #f0f0f0;
+	border-radius: 30%;
+
 }
 
 .container {
@@ -26,18 +32,10 @@
 }
 
 #secret-key {
-	font-size: 2em;
-	margin: 1em 0;
-}
-
-#secret-key span {
-	display: inline-block;
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 30%;
-	margin-right: 0.3em;
-	background-color: #f0f0f0;
-	color:#0e62e0;
+	margin: 1em;
+	color: #0e62e0;
+	display: flex;
+	justify-content: center;
 }
 
 .keypad {
@@ -93,7 +91,12 @@ html {
 body {
     font-size: 1rem;
     padding: 2rem;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
   }
+
+.cnt {
+	color: #0e62e0;
+}
 
 @media (max-width: 600px) {
     

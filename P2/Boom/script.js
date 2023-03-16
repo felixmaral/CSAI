@@ -176,7 +176,7 @@ function compare4(keyCompare) {
     } 
 
 function winGame() {
-    gameElementes.win.innerHTML = "¡ win !"
+    gameElementes.win.innerHTML = "¡WIN!"
     timer.stop()
 }
 
@@ -202,10 +202,10 @@ function winGame() {
         clicked = false;
 
         gameElementes.win.innerHTML = null;
-        gameElementes.d1.innerHTML = "*"
-        gameElementes.d2.innerHTML = "*"
-        gameElementes.d3.innerHTML = "*"
-        gameElementes.d4.innerHTML = "*"
+        gameElementes.d1.innerHTML = ""
+        gameElementes.d2.innerHTML = ""
+        gameElementes.d3.innerHTML = ""
+        gameElementes.d4.innerHTML = ""
 
         gameElementes.d1.style.color = "#0e62e0";
         gameElementes.d2.style.color = "#0e62e0";
