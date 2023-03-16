@@ -2,6 +2,11 @@
 	text-align: center;
 }
 
+.clave {
+	padding: 0.6em;
+	margin: 0.15em;
+}
+
 .container {
 	width: 80%;
 	margin: auto;
@@ -29,9 +34,8 @@
 	display: inline-block;
 	width: 1.5em;
 	height: 1.5em;
-	border: 2px solid black;
 	border-radius: 30%;
-	margin-right: 1.5em;
+	margin-right: 0.3em;
 	background-color: #f0f0f0;
 	color:#0e62e0;
 }
@@ -52,7 +56,7 @@
 	width: 4em;
 	height: 4em;
 	font-size: 2em;
-	margin-right: 0.5em;
+	margin: 0.15em;
 	border: none;
 	background-color: #f0f0f0;
 	border-radius: 5px;
@@ -91,9 +95,7 @@ body {
     padding: 2rem;
   }
 
-@media (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
+@media (max-width: 600px) {
+    
   }
   
