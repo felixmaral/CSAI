@@ -124,7 +124,7 @@
 function compare(keyCompare) {
 
     if (keyCompare == secretkey[0]) {
-        gameElementes.d1.style.color = "green";
+        gameElementes.d1.style.color = "MediumSeaGreen";
         gameElementes.d1.innerHTML = secretkey[0];
 
         estado = ESTADO.K2;
@@ -138,7 +138,7 @@ function compare(keyCompare) {
 function compare2(keyCompare) {
 
         if (keyCompare == secretkey[1]) {
-            gameElementes.d2.style.color = "green";
+            gameElementes.d2.style.color = "MediumSeaGreen";
             gameElementes.d2.innerHTML = secretkey[1];
             estado = ESTADO.K3;
             console.log("Adivinaste el número 2");
@@ -151,7 +151,7 @@ function compare2(keyCompare) {
 function compare3(keyCompare) {
 
         if (keyCompare == secretkey[2]) {
-            gameElementes.d3.style.color = "green";
+            gameElementes.d3.style.color = "MediumSeaGreen";
             gameElementes.d3.innerHTML = secretkey[2];
             estado = ESTADO.K4;
             console.log("Adivinaste el número 3");
@@ -164,7 +164,7 @@ function compare3(keyCompare) {
 function compare4(keyCompare) {
 
         if (keyCompare == secretkey[3]) {
-            gameElementes.d4.style.color = "green";
+            gameElementes.d4.style.color = "MediumSeaGreen";
             gameElementes.d4.innerHTML = secretkey[3];
             estado = ESTADO.WIN;
             console.log("Adivinaste el número 4");
