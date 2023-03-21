@@ -77,14 +77,14 @@
 
 html {
     font-size: 10px;
-  }
+}
   
 body {
     font-size: 1rem;
     padding: 2rem;
 	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
 	text-shadow: 1px 1px 1px grey;
-  }
+}
 
 .cnt {
 	color: #0e62e0;
