@@ -1,6 +1,5 @@
-
-// Cronometro
-
+    // CronoElements
+    
     const cronoElements = {
         display: document.getElementById("displayCrono"),
         boton_start: document.getElementById("start-btn"),
