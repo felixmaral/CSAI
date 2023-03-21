@@ -10,7 +10,6 @@
 	font-size: 1.53em;
 	background-color: #f0f0f0;
 	border-radius: 30%;
-
 }
 
 .container {
@@ -60,16 +59,6 @@
 	border-radius: 5px;
 	cursor: pointer;
 	color: #0e62e0;
-}
-
-.clear {
-	background-color: #ff6666;
-	color: white;
-}
-
-.enter {
-	background-color: #66ff66;
-	color: white;
 }
 
 .controls {
