@@ -91,11 +91,9 @@ function dibujarProyectil() {
     ctx.fillStyle = 'green';
     ctx.fillRect(10, canvas.height - 20, 18, 18);
 }
-  
-function dibujarCirculoAleatorio() {
-    const x = Math.floor((Math.random() * 0.73 + 0.27) * (canvas.width - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
-    const y = Math.floor(Math.random() * (canvas.height - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
-    const r = Math.floor(Math.random() * 1) + 10; // radio de 10px
+
+function dibujarCirculoAleatorio(x, y) {
+    const r = 10; // radio de 10px
     ctx.beginPath();
     ctx.arc(x, y, r, 0, 2 * Math.PI);
     ctx.fillStyle = "red";
@@ -117,13 +115,12 @@ function actualizarAnguloRangeDisplay() {
 function reset() {
     start.onclick = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        x = Math.floor((Math.random() * 0.73 + 0.27) * (canvas.width - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
+        y = Math.floor(Math.random() * (canvas.height - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
         dibujarProyectil();
-        dibujarCirculoAleatorio();
-    }
+        dibujarCirculoAleatorio(x, y);
+    }   
 }
-
-
-
 
 // Main
 
@@ -131,17 +128,16 @@ function main() {
 
     timer = new Crono(cronoElements.display);
 
+    x = Math.floor((Math.random() * 0.73 + 0.27) * (canvas.width - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
+    y = Math.floor(Math.random() * (canvas.height - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
+
     dibujarProyectil();
-    dibujarCirculoAleatorio();
+    dibujarCirculoAleatorio(x, y);
 
     actualizarVelRangeDisplay();
     actualizarAnguloRangeDisplay();
 
     reset(); // Activa la funcionalidad del boton Start New Game
-
-    
-
-
 
 }
 
