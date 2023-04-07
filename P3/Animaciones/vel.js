@@ -78,9 +78,11 @@ const ctx = canvas.getContext("2d");
 
 var angulo = document.getElementById("ang"); // Range
 var vel = document.getElementById("vel"); // Range
-
 var vAngulo = document.getElementById("valorAngulo") // Display
 var vVel = document.getElementById("valorVel") // Display
+
+var shoot = document.getElementById("shoot"); // Button Shoot
+var start = document.getElementById("start"); // Button Start New Game
 
 // Funciones de juego
 
@@ -112,9 +114,22 @@ function actualizarAnguloRangeDisplay() {
     });
 }
 
+function reset() {
+    start.onclick = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        dibujarProyectil();
+        dibujarCirculoAleatorio();
+    }
+}
 
+
+
+
+// Main
 
 function main() {
+
+    timer = new Crono(cronoElements.display);
 
     dibujarProyectil();
     dibujarCirculoAleatorio();
@@ -122,7 +137,12 @@ function main() {
     actualizarVelRangeDisplay();
     actualizarAnguloRangeDisplay();
 
+    reset(); // Activa la funcionalidad del boton Start New Game
+
     
+
+
+
 }
 
 // Esperar a que cargue el documento para iniciar
