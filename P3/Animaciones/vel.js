@@ -122,12 +122,23 @@ function reset() {
     }   
 }
 
+function shootF(x, y) {
+  
+    x = x + velp;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dibujarCirculoAleatorio(x, y);
+    dibujarProyectil(x, y, 10, 10, "blue"); // Pintar el proyectil
+    requestAnimationFrame(shootF);
+
+}
+
 // Main
 
 function main() {
 
     timer = new Crono(cronoElements.display);
 
+    velp = vel.value;
     x = Math.floor((Math.random() * 0.73 + 0.27) * (canvas.width - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
     y = Math.floor(Math.random() * (canvas.height - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
 
@@ -138,7 +149,9 @@ function main() {
     actualizarAnguloRangeDisplay();
 
     reset(); // Activa la funcionalidad del boton Start New Game
-
+    shoot.onclick = () => {
+        shootF(ang.value,vel.value)
+    }
 }
 
 // Esperar a que cargue el documento para iniciar
