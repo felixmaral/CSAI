@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tiro Parabólico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vel.js" defer></script>
+</head>
+<body>
+
+    <div id="contenedor">
+
+        <h1>Tiro Parabolico</h1>
+	    <canvas id="myCanvas" width="600" height="400"></canvas>
+        <div id="gameMenu">
+
+            <div id="crono">0:0:0</div>
+
+            <span>Ángulo de disparo: </span>
+            <span id="valorAngulo">
+                25
+            </span>
+            <div id="angulo">
+                <input type="range" name="ang" id="ang" min="0" max="50">
+            </div>
+
+            <span>Velocidad de disparo: </span>
+            <span id="valorVel">
+                25
+            </span>
+            <div id="velocidad">
+                <input type="range" name="vel" id="vel" min="0" max="50">
+            </div>
+
+            <div id="shoot" class="button" style="color: red">Shoot</div>
+            <div id="start" class="button" style="color: green">Start New Game</div>
+    
+        </div>
+	    
+    </div>
+
+</body>
+</html>

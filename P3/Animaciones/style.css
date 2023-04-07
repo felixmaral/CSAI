@@ -1,0 +1,48 @@
+#contenedor {
+    text-align: center;
+    padding-top: 2em;
+}
+
+#gameMenu {
+    margin-top: 2em;
+}
+
+#crono {
+    margin: 1.5em;
+}
+
+#angulo {
+    padding: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+#velocidad {
+    padding: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+.button {
+	margin: 1em;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #0e62e0;
+}
+
+canvas {
+    background-color: gainsboro;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 5px;
+}
+
+body {
+    font-size: 1.4rem;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
+	text-shadow: 0.31px 0.31px 0.31px grey;
+}
+
+  @media (max-width: 600px) {
+    
+  }
