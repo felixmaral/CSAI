@@ -126,9 +126,10 @@ function actualizarAnguloRangeDisplay() {
 
 function reset() {
     start.onclick = () => {
+        timer.reset();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         x = Math.floor((Math.random() * 0.73 + 0.27) * (canvas.width - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
-        y = Math.floor(Math.random() * (canvas.height - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes
+        y = Math.floor(Math.random() * (canvas.height - 25)) + 10; // Ajuste para evitar que el círculo se corte en los bordes   
         dibujarProyectil();
         dibujarCirculoAleatorio(x, y);
     }   
@@ -139,20 +140,26 @@ function shootF() {
     t = t + 0.1;
 
     console.log("test");
-  //-- Algoritmo de animacion:
-  //-- 1) Actualizar posicion del  elemento
-  //-- (física del movimiento rectilineo uniforme)
 
-   //-- Condición de rebote en extremos del canvas
-    if (px <= 0 || px >= (canvas.width - 20) ) {
-        Vx = -Vx;
-    }
-
-  //-- Condición de rebote en extremos horizontales del canvas
-    if (py <= 0 || py >= (canvas.height - 20)) {
-        Vy = -Vy;
-    }
-
+    if (px <= 0 || px > canvas.width - 15) {
+        timer.stop();
+        alert("Fallaste, pulsa Start New Game");
+        px = 5;
+        py = canvas.height - 20;
+        Vx = vx;
+        Vy = vy;
+        t = 0;
+        return;
+    } else if (py <= 0 || py > canvas.height - 16) {
+        timer.stop();
+        alert("Fallaste, pulsa Start New Game");
+        px = 5;
+        py = canvas.height - 20;
+        Vx = vx;
+        Vy = vy;
+        t = 0;
+        return;
+    } else {
     //-- Actualizar la posición
     px = 5 + Vx*t;
     py = ((canvas.height - 20) - Vy*t - (1/2)*g*(t**2));
@@ -162,16 +169,14 @@ function shootF() {
 
     //-- 3) Dibujar los elementos visibles
   
-    
     ctx.fillStyle = 'green';
     ctx.fillRect(px, py, 15, 15);
     ctx.fill();
 
     dibujarCirculoAleatorio(x, y);
 
-
-    //-- 4) Volver a ejecutar update cuando toque
     requestAnimationFrame(shootF);
+    }
 
 }
 
@@ -197,6 +202,7 @@ function main() {
         calcularVectores(angulo.value, vel.value);
         Vx = vx;
         Vy = vy;
+        timer.start()
         shootF();
     }
 
