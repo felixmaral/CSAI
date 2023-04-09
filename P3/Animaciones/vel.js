@@ -142,6 +142,7 @@ function shootF() {
     console.log("test");
 
     if (px <= 0 || px > canvas.width - 15) {
+
         timer.stop();
         alert("Fallaste, pulsa Start New Game");
         px = 5;
@@ -150,7 +151,9 @@ function shootF() {
         Vy = vy;
         t = 0;
         return;
+
     } else if (py <= 0 || py > canvas.height - 16) {
+
         timer.stop();
         alert("Fallaste, pulsa Start New Game");
         px = 5;
@@ -159,35 +162,31 @@ function shootF() {
         Vy = vy;
         t = 0;
         return;
-    } else if (Xobj - 7.5 <= px + 15 && py + 15 >= Yobj + -7.5) {
-        if (py <= Yobj + 7.5 && Xobj >= px + 15) {
-            timer.stop();
-            alert("¡Has acertado!");
-            px = 5;
-            py = canvas.height - 20;
-            Vx = vx;
-            Vy = vy;
-            t = 0;
-            return;
-        } else {
-            //-- Actualizar la posición
-            px = 5 + Vx*t;
-            py = ((canvas.height - 20) - Vy*t - (1/2)*g*(t**2));
 
-            //-- 2) Borrar el canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            //-- 3) Dibujar los elementos visibles
+    } else if (Xobj - 7.5 <= px + 15 && py + 15 >= Yobj + -7.5 && py <= Yobj + 7.5 && Xobj >= px + 15) {
+         
+        timer.stop();
+        alert("¡Has acertado!");
+        px = 5;
+        py = canvas.height - 20;
+        Vx = vx;
+        Vy = vy;
+        t = 0;
+        return;
+    
+    } else if (Xobj - 7.5 <= px + 15 && py <= Yobj + 7.5 && px <= Xobj + 7.5 && py >= Yobj) {
         
-            ctx.fillStyle = 'green';
-            ctx.fillRect(px, py, 15, 15);
-            ctx.fill();
+        timer.stop();
+        alert("¡Has acertado!");
+        px = 5;
+        py = canvas.height - 20;
+        Vx = vx;
+        Vy = vy;
+        t = 0;
+        return;
 
-            dibujarCirculoAleatorio(x, y);
-
-            requestAnimationFrame(shootF);
-        }
     } else {
+
     //-- Actualizar la posición
     px = 5 + Vx*t;
     py = ((canvas.height - 20) - Vy*t - (1/2)*g*(t**2));
@@ -205,9 +204,7 @@ function shootF() {
 
     requestAnimationFrame(shootF);
     }
-
 }
-
 // Main
 
 function main() {
