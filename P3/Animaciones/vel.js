@@ -159,6 +159,34 @@ function shootF() {
         Vy = vy;
         t = 0;
         return;
+    } else if (Xobj - 7.5 <= px + 15 && py + 15 >= Yobj + -7.5) {
+        if (py <= Yobj + 7.5 && Xobj >= px + 15) {
+            timer.stop();
+            alert("¡Has acertado!");
+            px = 5;
+            py = canvas.height - 20;
+            Vx = vx;
+            Vy = vy;
+            t = 0;
+            return;
+        } else {
+            //-- Actualizar la posición
+            px = 5 + Vx*t;
+            py = ((canvas.height - 20) - Vy*t - (1/2)*g*(t**2));
+
+            //-- 2) Borrar el canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            //-- 3) Dibujar los elementos visibles
+        
+            ctx.fillStyle = 'green';
+            ctx.fillRect(px, py, 15, 15);
+            ctx.fill();
+
+            dibujarCirculoAleatorio(x, y);
+
+            requestAnimationFrame(shootF);
+        }
     } else {
     //-- Actualizar la posición
     px = 5 + Vx*t;
@@ -200,6 +228,8 @@ function main() {
     reset(); // Activa la funcionalidad del boton Start New Game
     shoot.onclick = () => {
         calcularVectores(angulo.value, vel.value);
+        Xobj = x;
+        Yobj = y;
         Vx = vx;
         Vy = vy;
         timer.start()
