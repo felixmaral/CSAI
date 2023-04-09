@@ -153,25 +153,27 @@ function shootF() {
         Vy = -Vy;
     }
 
-  //-- Actualizar la posición
-  px = 5 + Vx*t;
-  py = ((canvas.height - 20) - Vy*t - (1/2)*g*(t**2));
+    //-- Actualizar la posición
+    px = 5 + Vx*t;
+    py = ((canvas.height - 20) - Vy*t - (1/2)*g*(t**2));
 
-  //-- 2) Borrar el canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //-- 2) Borrar el canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  //-- 3) Dibujar los elementos visibles
+    //-- 3) Dibujar los elementos visibles
   
     
-  ctx.fillStyle = 'green';
-  ctx.fillRect(px, py, 15, 15);
+    ctx.fillStyle = 'green';
+    ctx.fillRect(px, py, 15, 15);
+    ctx.fill();
+
+    dibujarCirculoAleatorio(x, y);
 
 
-  //-- 4) Volver a ejecutar update cuando toque
-  requestAnimationFrame(shootF);
+    //-- 4) Volver a ejecutar update cuando toque
+    requestAnimationFrame(shootF);
+
 }
-
-
 
 // Main
 
