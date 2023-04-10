@@ -185,6 +185,17 @@ function shootF() {
         t = 0;
         return;
 
+    } else if (px + 15 >= Xobj - 7.5 && py + 15 >= Yobj - 7.5 && px <= Xobj + 7.5 && py + 15 <= Yobj) {
+
+        timer.stop();
+        alert("¡Has acertado!");
+        px = 5;
+        py = canvas.height - 20;
+        Vx = vx;
+        Vy = vy;
+        t = 0;
+        return;
+
     } else {
 
     //-- Actualizar la posición
@@ -204,7 +215,9 @@ function shootF() {
 
     requestAnimationFrame(shootF);
     }
+
 }
+
 // Main
 
 function main() {
@@ -224,12 +237,13 @@ function main() {
 
     reset(); // Activa la funcionalidad del boton Start New Game
     shoot.onclick = () => {
+        timer.reset();
         calcularVectores(angulo.value, vel.value);
         Xobj = x;
         Yobj = y;
         Vx = vx;
         Vy = vy;
-        timer.start()
+        timer.start();
         shootF();
     }
 
