@@ -1,6 +1,5 @@
 #contenedor {
     text-align: center;
-    padding-top: auto;
     display: inline-block;
     justify-content: center;
     flex-direction: column;
@@ -29,11 +28,11 @@
 }
 
 input[type=range] {
-    height: 39px;
+    height: 36px;
     -webkit-appearance: none;
     margin: 10px 0;
     width: 100%;
-    background-color: whitesmoke;
+    background-color: white;
   }
   input[type=range]:focus {
     outline: none;
@@ -49,7 +48,7 @@ input[type=range] {
     border: 0px solid #8A8A8A;
   }
   input[type=range]::-webkit-slider-thumb {
-    box-shadow: 4px 4px 8px #878787;
+    box-shadow: 1px 1px 3px #878787;
     border: 0px solid #8A8A8A;
     height: 29px;
     width: 34px;
@@ -73,7 +72,7 @@ input[type=range] {
     border: 0px solid #8A8A8A;
   }
   input[type=range]::-moz-range-thumb {
-    box-shadow: 4px 4px 8px #878787;
+    box-shadow: 1px 1px 3px #878787;
     border: 0px solid #8A8A8A;
     height: 29px;
     width: 34px;
@@ -104,7 +103,7 @@ input[type=range] {
   }
   input[type=range]::-ms-thumb {
     margin-top: 1px;
-    box-shadow: 4px 4px 8px #878787;
+    box-shadow: 1px 1px 3px #878787;
     border: 0px solid #8A8A8A;
     height: 29px;
     width: 34px;
@@ -119,13 +118,12 @@ input[type=range] {
     background: #B6B6B6;
   }
   
-
 .card {
     display: block;
     flex-direction: column;
     justify-content: center;
     border-radius: 20px;
-    background-color: whitesmoke;
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     height: auto;
     padding: 20px;
@@ -171,11 +169,35 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 0.65em;
+    font-size: 1em;
 	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
 	text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1000px) {
-    
+@media (max-width: 760px) {
+    body {
+        font-size: 0.62em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #contenedor {
+        width: 90%;
+        text-align: center;
+        display: inline-block;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .card {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    canvas {
+        max-width: 90%;
+        max-height: 90%;
+    }
 }
