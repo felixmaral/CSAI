@@ -3,7 +3,7 @@
 // CronoElements
     
 const cronoElements = {
-    display: document.getElementById("crono"),
+    display: document.getElementById("crono")
 }
 
 //-- Clase cronómetro
