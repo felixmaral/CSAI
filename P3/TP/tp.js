@@ -249,6 +249,5 @@ function main() {
 
 }
 
-// Esperar a que cargue el documento para iniciar
 main();
   
