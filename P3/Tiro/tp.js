@@ -163,7 +163,7 @@ function shootF() {
         t = 0;
         return;
 
-    } else if (Xobj - 7.5 <= px + 15 && py + 15 >= Yobj + -7.5 && py <= Yobj + 7.5 && Xobj >= px + 15) {
+    } else if (Xobj - 7.5 <= px + 15 && py + 15 >= Yobj + -7.5 && py <= Yobj + 7.5 && Xobj + 7.5 >= px + 15) {
          
         timer.stop();
         alert("¡Has acertado!");
