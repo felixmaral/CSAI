@@ -144,7 +144,7 @@ function shootF() {
     if (px <= 0 || px > canvas.width - 15) {
 
         timer.stop();
-        alert("Fallaste, pulsa Start New Game");
+        alert("¡Fallaste!");
         px = 5;
         py = canvas.height - 20;
         Vx = vx;
@@ -155,7 +155,7 @@ function shootF() {
     } else if (py <= 0 || py > canvas.height - 16) {
 
         timer.stop();
-        alert("Fallaste, pulsa Start New Game");
+        alert("¡Fallaste!");
         px = 5;
         py = canvas.height - 20;
         Vx = vx;

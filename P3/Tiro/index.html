@@ -12,31 +12,47 @@
 
     <div id="contenedor">
 
-        <h1>Tiro Parabolico</h1>
-	    <canvas id="myCanvas" width="350" height="350"></canvas>
-        <div id="gameMenu">
+        <div class="card">
 
-            <div id="crono">0:0:0</div>
+            <h1>Tiro Parabolico</h1>
+	        <canvas id="myCanvas" width="350" height="350"></canvas>
+            <div id="gameMenu">
 
-            <span>Ángulo de disparo: </span>
-            <span id="valorAngulo">
-                45
-            </span>
-            <div id="angulo">
-                <input type="range" name="ang" id="ang" min="0" max="90">
+                <div id="crono">0:0:0</div>
+
+                <span>Ángulo de disparo: </span>
+                <span id="valorAngulo">
+                    45
+                </span>
+                <div id="angulo">
+                    <input type="range" name="ang" id="ang" min="0" max="90">
+                </div>
+
+                <span>Velocidad de disparo: </span>
+                <span id="valorVel">
+                    50
+                </span>
+                <div id="velocidad">
+                    <input type="range" name="vel" id="vel" min="0" max="100">
+                </div>
+                
+                <div id="shoot" class="button" style="color: #d11507;">Shoot</div> 
+                              
+                <div id="start" class="button" style="color: #23a341;">Start New Game</div> 
+
+               
+
             </div>
+        
+        </div>
 
-            <span>Velocidad de disparo: </span>
-            <span id="valorVel">
-                50
-            </span>
-            <div id="velocidad">
-                <input type="range" name="vel" id="vel" min="0" max="100">
-            </div>
+        <div class="card">
 
-            <div id="shoot" class="button" style="color: red">Shoot</div>
-            <div id="start" class="button" style="color: green">Start New Game</div>
-    
+            <h3>Instrucciones</h3>
+            <p>Ajusta el ángulo y velocidad de disparo y pulsa <span style="color:red">Shoot</span></p>
+            <p>Para volver a disparar al mismo objetivo reajusta los parámetros y pulsa <span style="color:red">Shoot</span></p>
+            <p>Si quieres empezar un nuevo juego, pulsa <span style="color:green">Start New Game</span></p></p>
+
         </div>
 	    
     </div>
