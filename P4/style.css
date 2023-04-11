@@ -1,0 +1,43 @@
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+  }
+  
+  .memory-card {
+    position: relative;
+    width: calc(25% - 10px);
+    margin: 5px;
+    perspective: 1000px;
+  }
+  
+  .front-face, .back-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  
+  .memory-card.is-flipped .front-face {
+    transform: rotateY(0deg);
+  }
+  
+  .memory-card.is-flipped .back-face {
+    transform: rotateY(-180deg);
+  }
+  
+  /* Estilos para las imágenes traseras */
+  .back-face {
+    background-color: #222;
+    /* Agrega un patrón o imagen de fondo aquí */
+  }
+  
+  /* Agrega más estilos aquí */
+  
