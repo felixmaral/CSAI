@@ -1,6 +1,32 @@
 body {
+    
+    background: #d0cef5;
+
     text-shadow: 0.01px 0.01px 0.04px rgba(46, 44, 44, 0.808);
-    font-family: Monserrat;
+    color: #4f48ce;
+    font-family: 'DynaPuff', cursive;
+    font-size: 0.8em;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
+
+.display {
+    text-align: center;
+    margin: 1.5em;
+}
+
+.timer {
+    margin-top: 1em;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
 }
 
 .game {
@@ -10,8 +36,34 @@ body {
     transform: translate(-50%, -50%);
 }
 
-button {
+.controles {
+    text-align: center;
+}
+
+.btn {
+    color: #4f48ce;
+    display: inline-block;
+    font-family: 'DynaPuff', cursive;
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background: linear-gradient(to right, #b7afec, #b9b6f5);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
     cursor: pointer;
+    border: none;
+}
+  
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+  
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .disabled {
@@ -30,9 +82,18 @@ button {
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    background: #282A3A;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    background: linear-gradient(to right, #b7afec, #b9b6f5);
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
+}
+
+.card-front {
+    transition: all 0.5s ease-in-out;
+}
+  
+.card-front:hover {
+    transform: scale(1.1);
 }
 
 .card-back {
@@ -52,9 +113,18 @@ button {
     transform: rotateY(0) rotateZ(0);
 }
 
+.win {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
 @font-face {
     font-family: Montserrat;
     src: url(./Montserrat-Regular.ttf);
 }
+
+
+
+
 
 
