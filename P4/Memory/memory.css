@@ -5,12 +5,13 @@ body {
     text-shadow: 0.01px 0.01px 0.04px rgba(46, 44, 44, 0.808);
     color: #4f48ce;
     font-family: 'DynaPuff', cursive;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 
 h1 {
     text-transform: uppercase;
     margin-bottom: 2em;
+    font-size: 3em;
 }
 
 .display {
@@ -24,9 +25,8 @@ h1 {
 
 .tablero {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(4, 0.5fr);
+    grid-template-rows: repeat(4, 0.5fr);
 }
 
 .game {
@@ -75,6 +75,7 @@ h1 {
     width: 100px;
     height: 100px;
     cursor: pointer;
+    margin: 1em;
 }
 
 .card-front, .card-back {
@@ -118,11 +119,24 @@ h1 {
     margin-top: 1.5em;
 }
 
-@font-face {
-    font-family: Montserrat;
-    src: url(./Montserrat-Regular.ttf);
-}
+@media (max-width: 600px) {
+    .game {
+        width: 70%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
+    .card {
+       height: 45px;
+       width: 45px;
+    }
+
+    .controles {
+        
+    }
+}
 
 
 
