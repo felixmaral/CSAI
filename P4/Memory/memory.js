@@ -7,7 +7,7 @@ const selectors = {
     win: document.querySelector('.win')
 }
 
-var startBtn = document.getElementById("btn")
+const startBtn = document.getElementsByClassName('btn');
 
 const state = {
     gameStarted: false,
@@ -35,9 +35,13 @@ const generateGame = () => {
     // dimensiones entre dos, para asegurarnos de que cubrimos todas las cartas
     const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
 
+    console.log(picks);
+
     //-- Después descolocamos las posiciones para asegurarnos de que las parejas de cartas
     // están desordenadas.
-    const items = shuffle([...picks, ...picks])
+    const items = shuffle([...picks,...picks])
+
+    console.log(items);
     
     //-- Vamos a utilizar una función de mapeo para generar 
     //  todas las cartas en función de las dimensiones
@@ -130,8 +134,8 @@ const startGame = () => {
     state.loop = setInterval(() => {
         state.totalTime++
 
-        selectors.movimientos.innerText = `${state.totalFlips} movimientos`
-        selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
+        selectors.movimientos.innerText = `${state.totalFlips} Movimientos`
+        selectors.timer.innerText = `Tiempo: ${state.totalTime} sec`
     }, 1000)
 }
 
@@ -205,7 +209,7 @@ const flipBackCards = () => {
     state.flippedCards = 0
 }
 
-selectors.comenzar.
+
     // Generamos el juego
     generateGame()
 

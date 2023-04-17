@@ -1,8 +1,16 @@
 
 html {
-    width: 100%;
+    font-family: 'DynaPuff';
+    color: #0a045f;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body{
+    background: rgb(255, 255, 255);
+    /* background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
+    background-size: cover;
     height: 100%;
-    background: linear-gradient(120deg,  #075ee0 0%,#1947c7 50%,#2806be 100%);
 }
 
 .game {
@@ -20,23 +28,55 @@ html {
 }
 
 button {
-    background: #282A3A;
+    background: #0a045f;
     color: #FFF;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px 20px;
     border: 0;
     cursor: pointer;
-    font-family: Montserrat;
+    font-family: 'DynaPuff';
     font-size: 18pt;
     margin: 1em;
+    transition: background-color 0.3s ease;
 }
 
+.btn:hover {
+    animation-name: elevacion;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .btn:not(:hover) {
+    animation-name: bajada;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes elevacion {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes bajada {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
 .disabled {
-    color: #757575;
+    color: rgb(129, 162, 255);
+    background-color: #0a045f;
 }
 
 .display {
-    color: #282A3A;
+    color: #0a045f;
     font-size: 14pt;
     margin: 1em;
 }
@@ -47,7 +87,8 @@ button {
 
 .tablero,
 .win {
-    border-radius: 5px;
+  background: linear-gradient(228deg, #0a045f 0%, rgba(9,9,121,1) 35%, rgb(18, 29, 179) 100%);
+    border-radius: 10px;
     box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
     /* background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -58,7 +99,7 @@ button {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-gap: 20px;
+    grid-gap: 15px;
 }
 
 .grid-container.flipped .tablero {
@@ -79,10 +120,12 @@ button {
 .card-front,
 .card-back {
     position: absolute;
-    border-radius: 5px;
+    border-radius: 25px;
     width: 100%;
     height: 100%;
-    background: #282A3A;
+    background: rgb(11,5,110);
+    background: linear-gradient(15deg, rgb(201, 220, 255) 0%, rgb(129, 162, 255) 43%,rgb(183, 208, 255) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -127,3 +170,57 @@ button {
 .highlight {
     color: #6f00fc;
 }
+
+/* Estilos para pantallas más pequeñas */
+@media only screen and (max-width: 760px) {
+
+    html, body {
+        max-width: 90%;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    .game {
+      font-size: 0.8rem;
+    }
+
+    .btn {
+      font-size: 0.8rem;
+    }
+    
+    .controles {
+      margin-top: 5px;
+    }
+    
+    .grid-container {
+      margin-top: 10px;
+    }
+    
+    .card-front, .card-back {
+      text-align: center;
+      border-radius: 5px;
+      width: 52px;
+      height: 52px;
+      font-size: 1.2rem;
+      vertical-align: top;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 52px;
+      height: 52px;
+    }
+    
+    .win {
+      font-size: 1.2rem;
+    }
+  }
+  
+  
+
+  
