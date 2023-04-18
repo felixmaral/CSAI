@@ -7,7 +7,7 @@ html {
 }
 
 body{
-  background: linear-gradient(75deg, darkblue, rgb(72, 104, 245));
+  background: linear-gradient(75deg, rgb(28, 28, 199), rgb(72, 104, 245));
 }
 
 .game {
