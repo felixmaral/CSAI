@@ -7,9 +7,7 @@ html {
 }
 
 body{
-    background: rgb(255, 255, 255);
-    /* background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
-    background-size: cover;
+  background-image: url(fondo3.jpg);
     height: 100%;
 }
 
@@ -25,6 +23,26 @@ body{
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
+}
+
+select {
+  appearance: unset;
+  padding: 15px 20px;
+  border-radius: 20px;
+  border: 1px solid #0a045f;
+  background-color: #0a045f;
+  color: #ffffff;
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.reset {
+  padding: 1em;
+  border-radius: 20px;
+  background-color: #0a045f;
+  color: #ffffff;
+  font-size: 1em;
+  margin: 0.5em;
 }
 
 button {
@@ -52,29 +70,28 @@ button:not(:hover) {
     animation-fill-mode: forwards;
 }
   
-  @keyframes elevacion {
+@keyframes elevacion {
     from {
       transform: translateY(0);
     }
     to {
       transform: translateY(-5px);
     }
-  }
+}
   
-  @keyframes bajada {
+@keyframes bajada {
     from {
       transform: translateY(-5px);
     }
     to {
       transform: translateY(0);
     }
-  }
+}
 
 .disabled {
     color: rgb(221, 221, 221);
     background-color: #0a045f;
 }
-
 
 .reset {
     cursor: pointer;
