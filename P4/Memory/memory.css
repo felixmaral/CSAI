@@ -35,22 +35,22 @@ button {
     border: 0;
     cursor: pointer;
     font-family: 'DynaPuff';
-    font-size: 18pt;
+    font-size: 15pt;
     margin: 1em;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+button:hover {
     animation-name: elevacion;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
-  }
+}
   
-  .btn:not(:hover) {
+button:not(:hover) {
     animation-name: bajada;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
-  }
+}
   
   @keyframes elevacion {
     from {
@@ -71,8 +71,12 @@ button {
   }
 
 .disabled {
-    color: rgb(129, 162, 255);
+    color: rgb(221, 221, 221);
     background-color: #0a045f;
+}
+
+.reset {
+    cursor: pointer;
 }
 
 .display {
@@ -185,7 +189,7 @@ button {
 @media only screen and (max-width: 760px) {
 
     html, body {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     body {
@@ -211,8 +215,8 @@ button {
     .card-front, .card-back {
       text-align: center;
       border-radius: 5px;
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       font-size: 1.2rem;
       vertical-align: top;
       overflow: hidden;
@@ -222,8 +226,8 @@ button {
     }
 
     .card {
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
     }
     
     .win {

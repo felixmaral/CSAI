@@ -9,6 +9,12 @@ const selectors = {
 
 const startBtn = document.getElementsByClassName('btn');
 
+const nivel = {
+    n1: document.getElementById('n1'),
+    n2: document.getElementById('n2'),
+    n3: document.getElementById('n3')
+}
+
 const state = {
     gameStarted: false,
     flippedCards: 0,
@@ -17,8 +23,9 @@ const state = {
     loop: null
 }
 
+  
 const generateGame = () => {
-    const dimensions = selectors.tablero.getAttribute('grid-dimension')
+    dimensions = selectors.tablero.getAttribute('grid-dimension')
 
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
@@ -28,24 +35,26 @@ const generateGame = () => {
 
     //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
     const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
+
+    // Posibles emojis para cambio 🐶🐱🐭🐹🐰🐻🐼🐨🐯🐷🐸🐵🐮🦁
     
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
     // es diferente.
     // Es decir, si tenemos un array con 10 emojis, vamos a elegir el cuadrado de las
     // dimensiones entre dos, para asegurarnos de que cubrimos todas las cartas
-    const picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
+    picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
 
     console.log(picks);
 
     //-- Después descolocamos las posiciones para asegurarnos de que las parejas de cartas
     // están desordenadas.
-    const items = shuffle([...picks,...picks])
+    items = shuffle([...picks,...picks])
 
     console.log(items);
     
     //-- Vamos a utilizar una función de mapeo para generar 
     //  todas las cartas en función de las dimensiones
-    const cards = `
+    cards = `
         <div class="tablero" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
                 <div class="card">
@@ -58,7 +67,7 @@ const generateGame = () => {
     
     //-- Vamos a utilizar un parser para transformar la cadena que hemos generado
     // en código html.
-    const parser = new DOMParser().parseFromString(cards, 'text/html')
+    var parser = new DOMParser().parseFromString(cards, 'text/html')
 
     //-- Por último, vamos a inyectar el código html que hemos generado dentro de el contenedor
     // para el tablero de juego.
@@ -67,12 +76,12 @@ const generateGame = () => {
 
 const pickRandom = (array, items) => {
     // La sintaxis de tres puntos nos sirve para hacer una copia del array
-    const clonedArray = [...array]
+    var clonedArray = [...array]
     // Random picks va almacenar la selección al azar de emojis
-    const randomPicks = [] 
+    var randomPicks = [] 
 
     for (let index = 0; index < items; index++) {
-        const randomIndex = Math.floor(Math.random() * clonedArray.length)
+        var randomIndex = Math.floor(Math.random() * clonedArray.length)
         // Utilizamos el índice generado al azar entre los elementos del array clonado
         // para seleccionar un emoji y añadirlo al array de randompicks.
         randomPicks.push(clonedArray[randomIndex])
@@ -87,7 +96,7 @@ const pickRandom = (array, items) => {
 }
 
 const shuffle = array => {
-    const clonedArray = [...array]
+    var clonedArray = [...array]
 
     // Intercambiamos las posiciones de los emojis al azar para desorganizar el array
     // así nos aseguramos de que las parejas de emojis no están consecutivas.
@@ -118,8 +127,22 @@ const attachEventListeners = () => {
         // empezar el juego
         } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
             startGame()
+        } else if (eventTarget.className.includes('reset')) {
+            reset();
+
         }
     })
+}
+
+const reset = () => {
+
+    state.gameStarted = false
+    selectors.comenzar.classList.remove('disabled')
+    state.loop = 0
+    state.flippedCards = 0
+    state.totalFlips = 0
+    state.totalTime = 0
+
 }
 
 const startGame = () => {
@@ -137,6 +160,7 @@ const startGame = () => {
         selectors.movimientos.innerText = `${state.totalFlips} Movimientos`
         selectors.timer.innerText = `Tiempo: ${state.totalTime} sec`
     }, 1000)
+    
 }
 
 const flipCard = card => {
@@ -209,12 +233,10 @@ const flipBackCards = () => {
     state.flippedCards = 0
 }
 
+generateGame()
 
-    // Generamos el juego
-    generateGame()
+attachEventListeners()
 
-    // Asignamos las funciones de callback para determinados eventos
-    attachEventListeners()
 
 
 
