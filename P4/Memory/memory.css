@@ -7,8 +7,7 @@ html {
 }
 
 body{
-  background-image: url(fondo3.jpg);
-    height: 50%;
+  background: linear-gradient(75deg, darkblue, rgb(72, 104, 245));
 }
 
 .game {
@@ -90,7 +89,7 @@ button:not(:hover) {
 }
 
 .disabled {
-    color: rgb(221, 221, 221);
+    color: rgb(14, 10, 223);
     background-color: #0a045f;
 }
 
@@ -110,7 +109,6 @@ button:not(:hover) {
 
 .tablero,
 .win {
-  background: linear-gradient(228deg, #0a045f 0%, rgba(9,9,121,1) 35%, rgb(18, 29, 179) 100%);
     border-radius: 10px;
     box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
     /* background: linear-gradient(135deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%); */
@@ -119,6 +117,7 @@ button:not(:hover) {
 }
 
 .tablero {
+  background: #0a045f;
   padding: 15px;
   display: grid;
   grid-gap: 20px;
@@ -146,7 +145,7 @@ button:not(:hover) {
     width: 100%;
     height: 100%;
     background: rgb(11,5,110);
-    background: linear-gradient(15deg, rgb(201, 220, 255) 0%, rgb(129, 162, 255) 43%,rgb(183, 208, 255) 100%);
+    background: linear-gradient(15deg, rgb(11,5,110) 0%, rgb(16, 25, 151) 43%,rgb(11,5,110) 100%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
@@ -186,7 +185,7 @@ button:not(:hover) {
     height: 100%;
     text-align: center;
     color: #FFF;
-    background: linear-gradient(228deg, #0a045f 0%, rgba(9,9,121,1) 35%, rgb(18, 29, 179) 100%);
+    background:  #0a045f;
     transform: rotateY(180deg) rotateZ(50deg);
 }
 
@@ -219,7 +218,7 @@ button:not(:hover) {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       color: #ffffff;
   }
 
