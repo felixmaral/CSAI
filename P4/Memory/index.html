@@ -26,7 +26,7 @@
                 <button class="btn">Comenzar</button>
                 <div class="display">
                     <div class="movimientos">0 Movimientos</div>
-                    <div class="timer">Tiempo: 0 sec</div>
+                    <div class="timer">Tiempo: 0 s</div>
                 </div>
             </div>
             <div class="grid-container">
@@ -118,12 +118,13 @@
 
             <div id="r" class="reset">Reset</div>
 
-            <input type="radio" id="n1" name="nivel" value="2">
-            <label for="html">Nivel 1</label><br>
-            <input type="radio" id="n2" name="nivel" value="4">
-            <label for="css">Nivel 2</label><br>
-            <input type="radio" id="n3" name="nivel" value="6">
-            <label for="javascript">Nivel 3</label>
+            <label for="dimensiones">Seleccione las dimensiones del tablero:</label> 
+
+                <select id="nivel" name="nivel">
+                    <option value="2">Nivel 1</option>
+                    <option value="4">Nivel 2</option>
+                    <option value="6">Nivel 3</option>
+                </select>
 
         </div>
 

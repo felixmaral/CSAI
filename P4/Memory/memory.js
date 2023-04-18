@@ -1,60 +1,71 @@
 const selectors = {
+    nivel: document.querySelector('#nivel'),
+    reset: document.querySelector('.reset'),
     gridContainer: document.querySelector('.grid-container'),
     tablero: document.querySelector('.tablero'),
     movimientos: document.querySelector('.movimientos'),
     timer: document.querySelector('.timer'),
-    comenzar: document.querySelector('.btn'),
-    win: document.querySelector('.win')
-}
-
-const startBtn = document.getElementsByClassName('btn');
-
-const nivel = {
-    n1: document.getElementById('n1'),
-    n2: document.getElementById('n2'),
-    n3: document.getElementById('n3')
+    boton: document.querySelector('.btn'),
+    win: document.querySelector('.win'),
 }
 
 const state = {
     gameStarted: false,
     flippedCards: 0,
-    totalFlips: 0,
-    totalTime: 0,
-    loop: null
+    totalFlips: 0,  //numero de giros de las cartas, de movimientos
+    totalTime: 0, //total del tiempo
+    loop: null  //va a ir actualizando el display
 }
 
-  
+const resetFunction = () => {
+    clearInterval(state.loop);
+    state.gameStarted = false;
+    state.flippedCards = 0;
+    state.totalFlips = 0;
+    state.totalTime = 0;
+    selectors.gridContainer.classList.remove('flipped');
+    selectors.timer.textContent = "Tiempo: 0 s";
+    selectors.movimientos.textContent = "0 Movimientos";
+    selectors.boton.classList.remove('disabled'); //Línea para volver a habilitar el botón comenzar
+    generateGame();
+    attachEventListeners();
+}
+
+//--- Planteamos el tablero de juego:
 const generateGame = () => {
-    dimensions = selectors.tablero.getAttribute('grid-dimension')
+
+    let dimensions = selectors.nivel.value;
+
 
     //-- Nos aseguramos de que el número de dimensiones es par
     // y si es impar lanzamos un error
-    if (dimensions % 2 !== 0) {
-        throw new Error("Las dimensiones del tablero deben ser un número par.")
+    if (dimensions % 2 !== 0 || dimensions < 2 || dimensions > 6) {
+        throw new Error("El número de dimensiones debe ser un número par mayor o igual a 2.");
     }
 
-    //-- Creamos un array con los emojis que vamos a utilizar en nuestro juego
-    const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
-
-    // Posibles emojis para cambio 🐶🐱🐭🐹🐰🐻🐼🐨🐯🐷🐸🐵🐮🦁
+    if (selectors.nivel.value == 2) {
+        var emojis = ['⚽','🏀','🏈','⚾','🥎','🏐','🏉','🎱']
+    } else if (selectors.nivel.value == 4) {
+        var emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍'];
+    } else if (selectors.nivel.value == 6) {
+        var emojis = ['🐶','🐱','🐹','🐰','🐻','🐼','🐨','🐯','🦁','🐮','🐷','🐸','🐵','🐺','🦊','🦝','🐗','🐴','🦓','🦒','🦄']
+    }
     
+
     //-- Elegimos un subconjunto de emojis al azar, así cada vez que comienza el juego
     // es diferente.
     // Es decir, si tenemos un array con 10 emojis, vamos a elegir el cuadrado de las
     // dimensiones entre dos, para asegurarnos de que cubrimos todas las cartas
-    picks = pickRandom(emojis, (dimensions * dimensions) / 2) 
-
+    const picks = pickRandom(emojis, (dimensions * dimensions) / 2)
     console.log(picks);
 
     //-- Después descolocamos las posiciones para asegurarnos de que las parejas de cartas
     // están desordenadas.
-    items = shuffle([...picks,...picks])
+    const items = shuffle([...picks, ...picks])
 
-    console.log(items);
-    
-    //-- Vamos a utilizar una función de mapeo para generar 
+    //-- Vamos a utilizar una función de mapeo para generar
     //  todas las cartas en función de las dimensiones
-    cards = `
+    const cards = `
         <div class="tablero" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
                 <div class="card">
@@ -62,30 +73,33 @@ const generateGame = () => {
                     <div class="card-back">${item}</div>
                 </div>
             `).join('')}
-       </div>
+    </div>
     `
-    
+
     //-- Vamos a utilizar un parser para transformar la cadena que hemos generado
     // en código html.
-    var parser = new DOMParser().parseFromString(cards, 'text/html')
+    //const parser = new DOMParser().parseFromString(cards, 'text/html')
 
     //-- Por último, vamos a inyectar el código html que hemos generado dentro de el contenedor
     // para el tablero de juego.
-    selectors.tablero.replaceWith(parser.querySelector('.tablero'))
+
+    //selectors.tablero.replaceWith(parser.querySelector('.tablero'))
+    selectors.tablero.innerHTML = cards;
 }
 
 const pickRandom = (array, items) => {
     // La sintaxis de tres puntos nos sirve para hacer una copia del array
-    var clonedArray = [...array]
+    const clonedArray = [...array]
     // Random picks va almacenar la selección al azar de emojis
-    var randomPicks = [] 
+    const randomPicks = []
 
     for (let index = 0; index < items; index++) {
-        var randomIndex = Math.floor(Math.random() * clonedArray.length)
+        const randomIndex = Math.floor(Math.random() * clonedArray.length)
+
         // Utilizamos el índice generado al azar entre los elementos del array clonado
         // para seleccionar un emoji y añadirlo al array de randompicks.
         randomPicks.push(clonedArray[randomIndex])
-        // Eliminamos el emoji seleccionado del array clonado para evitar que 
+        // Eliminamos el emoji seleccionado del array clonado para evitar que
         // vuelva a salir elegido con splice.
         // 0 - Inserta en la posición que le indicamos.
         // 1 - Remplaza el elemento, y como no le damos un nuevo elemento se queda vacío.
@@ -95,8 +109,13 @@ const pickRandom = (array, items) => {
     return randomPicks
 }
 
+// Boton de reseteo
+selectors.reset.onclick = () =>{
+    resetFunction();
+}
+
 const shuffle = array => {
-    var clonedArray = [...array]
+    const clonedArray = [...array]
 
     // Intercambiamos las posiciones de los emojis al azar para desorganizar el array
     // así nos aseguramos de que las parejas de emojis no están consecutivas.
@@ -113,43 +132,37 @@ const shuffle = array => {
     return clonedArray
 }
 
+
 const attachEventListeners = () => {
     document.addEventListener('click', event => {
         // Del evento disparado vamos a obtener alguna información útil
         // Como el elemento que ha disparado el evento y el contenedor que lo contiene
         const eventTarget = event.target
         const eventParent = eventTarget.parentElement
+        
 
         // Cuando se trata de una carta que no está girada, le damos la vuelta para mostrarla
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent)
         // Pero si lo que ha pasado es un clic en el botón de comenzar lo que hacemos es
         // empezar el juego
-        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
+        } else if (eventTarget.className == 'btn' && !eventTarget.className.includes('disabled')) {
             startGame()
-        } else if (eventTarget.className.includes('reset')) {
-            reset();
-
         }
     })
 }
 
-const reset = () => {
+// Generamos el juego
+generateGame()
 
-    state.gameStarted = false
-    selectors.comenzar.classList.remove('disabled')
-    state.loop = 0
-    state.flippedCards = 0
-    state.totalFlips = 0
-    state.totalTime = 0
-
-}
+// Asignamos las funciones de callback para determinados eventos
+attachEventListeners()
 
 const startGame = () => {
     // Iniciamos el estado de juego
     state.gameStarted = true
     // Desactivamos el botón de comenzar
-    selectors.comenzar.classList.add('disabled')
+    selectors.boton.classList.add('disabled')
 
     // Comenzamos el bucle de juego
     // Cada segundo vamos actualizando el display de tiempo transcurrido
@@ -157,11 +170,12 @@ const startGame = () => {
     state.loop = setInterval(() => {
         state.totalTime++
 
-        selectors.movimientos.innerText = `${state.totalFlips} Movimientos`
-        selectors.timer.innerText = `Tiempo: ${state.totalTime} sec`
+        selectors.movimientos.innerText = `${state.totalFlips} movimientos`
+        selectors.timer.innerText = `tiempo: ${state.totalTime} sec`
     }, 1000)
-    
 }
+
+
 
 const flipCard = card => {
     // Sumamos uno al contador de cartas giradas
@@ -186,7 +200,7 @@ const flipCard = card => {
         // y descartamos las que están emparejadas
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)')
 
-        // Si las cartas coinciden las marcamos como pareja 
+        // Si las cartas coinciden las marcamos como pareja
         // añadiendo la clase correspondiente
         if (flippedCards[0].innerText === flippedCards[1].innerText) {
             flippedCards[0].classList.add('matched')
@@ -232,10 +246,6 @@ const flipBackCards = () => {
     // Ponemos el contado de parejas de cartas a cero
     state.flippedCards = 0
 }
-
-generateGame()
-
-attachEventListeners()
 
 
 

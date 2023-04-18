@@ -75,6 +75,7 @@ button:not(:hover) {
     background-color: #0a045f;
 }
 
+
 .reset {
     cursor: pointer;
 }
@@ -100,10 +101,9 @@ button:not(:hover) {
 }
 
 .tablero {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 15px;
+  padding: 15px;
+  display: grid;
+  grid-gap: 20px;
 }
 
 .grid-container.flipped .tablero {
