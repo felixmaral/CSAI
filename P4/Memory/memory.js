@@ -19,11 +19,12 @@ const state = {
 
 const resetFunction = () => {
     clearInterval(state.loop);
+    selectors.gridContainer.classList.remove('flipped');
     state.gameStarted = false;
     state.flippedCards = 0;
     state.totalFlips = 0;
     state.totalTime = 0;
-    selectors.gridContainer.classList.remove('flipped');
+    
     selectors.timer.textContent = "Tiempo: 0 s";
     selectors.movimientos.textContent = "0 Movimientos";
     selectors.boton.classList.remove('disabled'); //Línea para volver a habilitar el botón comenzar

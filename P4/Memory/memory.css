@@ -6,8 +6,12 @@ html {
     background-repeat: no-repeat;
 }
 
+h1 {
+  text-align: center;
+}
+
 body{
-  background: linear-gradient(75deg, rgb(67, 67, 240), rgb(72, 127, 245));
+  background: linear-gradient(75deg, rgb(9, 9, 216), rgb(111, 155, 248));
 }
 
 .game {
@@ -89,7 +93,7 @@ button:not(:hover) {
 }
 
 .disabled {
-    color: #0a045f;
+    color: rgb(72, 127, 245);
     background-color: #fff;
 }
 
@@ -199,7 +203,7 @@ button:not(:hover) {
 }
 
 .highlight {
-    color:rgb(79, 126, 255);
+    color:rgb(72, 127, 245);
 }
 
 /* Estilos para pantallas más pequeñas */
